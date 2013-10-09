@@ -1,0 +1,59 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+    <h:form id="frmNuevoUsuario">
+        <p:dialog widgetVar="dlgNuevoUsuario" modal="true" 
+                  id="dlgNuevoUsuario" showEffect="slide" hideEffect="fold">
+            <p:messages id="msgRegistrarUsuario" closable="true" />
+            <h:outputText value="Seguridad" styleClass="ui-subtitulo-formulario"/><br />
+            <p:separator />
+            <table style="width: 370px;margin-left: 20px;">
+                <tr>
+                    <td style="width: 90px;"><h:outputText value="Nickname" /></td>
+                    <td style="width: 10px;"><h:outputText value=":" /></td>
+                    <td style="width: 250px;"><p:inputText styleClass="ui-texto-formulario-tm" required="true" requiredMessage="Usuario es requerido"/> </td>
+                </tr>
+                <tr>
+                    <td style="width: 90px;"><h:outputText value="Contraseña" /></td>
+                    <td style="width: 10px;"><h:outputText value=":" /></td>
+                    <td style="width: 250px;"><p:password styleClass="ui-texto-formulario-tm" required="true" requiredMessage="Contraseña es requerida"/> </td>
+                </tr>
+            </table>
+            <h:outputText value="Perfil" styleClass="ui-subtitulo-formulario"/><br />
+            <p:separator />
+            <table style="width: 370px;margin-left: 20px;">
+                <tr>
+                    <td style="width: 90px;"><h:outputText value="Personal" /></td>
+                    <td style="width: 10px;"><h:outputText value=":" /></td>
+                    <td style="width: 250px;">
+                        <p:selectOneMenu id="lstPersonal" style="width: 250px;" 
+                                         required="true" requiredMessage="Personal es necesario"> 
+                            <f:selectItem itemLabel="--seleccione--" noSelectionOption="true"/>                          
+                        </p:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90px;"><h:outputText value="Perfil" /></td>
+                    <td style="width: 10px;"><h:outputText value=":" /></td>
+                    <td style="width: 250px;">
+                        <p:selectOneMenu id="lstPerfil" style="width: 250px;" value="#{gestionarUsuario.idPerfil}"
+                                         required="true" requiredMessage="Perfil es necesario"> 
+                            <f:selectItem itemLabel="--seleccione--" noSelectionOption="true" />
+                            <f:selectItems value="#{gestionarUsuario.siPerfilList}" />
+                        </p:selectOneMenu></td>
+                </tr>
+            </table>
+            <p:separator />
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="text-align: right;padding-right: 6px;">
+                        <p:commandButton value="#{gestionarUsuario.nombreBoton}" action="#{gestionarUsuario.registrarUsuario}" icon="ui-icon-disk" update="msgRegistrarUsuario"/>
+                    </td>
+                </tr>
+            </table>
+        </p:dialog>
+    </h:form>
+</ui:composition>

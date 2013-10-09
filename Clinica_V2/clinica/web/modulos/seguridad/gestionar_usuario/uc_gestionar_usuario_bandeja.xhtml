@@ -1,0 +1,89 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+    <h:form id="frmGestionarUsuario">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td style="text-align: left;vertical-align: bottom;padding-bottom: 4px;" >
+                    <h:outputText value=":: Gestionar Usuarios" styleClass="ui-tittle-text"/></td>
+                <td style="text-align: right;padding-right: 6px;">
+                    <p:commandButton  icon="ui-icon-document" value="Nuevo usuario" 
+                                      action="#{usuarioMB.preRegistrarUsuario}" ajax="true"/>
+                </td>
+            </tr>
+        </table>
+        <p:separator />
+        <p:messages id="msgBandejaUsuario" closable="true"/>
+        <p:dataTable id="tblUsuario" var="usr" rows="10" selectionMode="single" 
+                     emptyMessage="Sin usuarios a mostrar" 
+                     > 
+            <f:facet name="header">  
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td style="text-align: left">
+                            <table cellspacing="0" cellpadding="0" border="0" style="width: 555px;">
+                                <tr>
+                                    <td style="width: 150px;">
+                                        <h:outputText value="Nombre y/o apellidos: "/>
+                                    </td>
+                                    <td style="width: 305px;">
+                                        <p:inputText style="width: 290px;" />
+                                    </td>
+                                    <td style="width: 100px;">
+                                        <p:commandButton icon="ui-icon-search" value="Consultar" update="tblUsuario"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </f:facet>
+            <p:column headerText="Doc. Ident." style="width:8%;" styleClass="ui-fila-tabla">
+             
+            </p:column>
+            <p:column headerText="Apellidos" style="width:25%;" styleClass="ui-fila-tabla">
+             
+            </p:column>
+            <p:column headerText="Nombres" style="width:25%;" styleClass="ui-fila-tabla" >
+               
+            </p:column>
+            <p:column headerText="Usuario" style="width:12%;" styleClass="ui-fila-tabla"> 
+               
+            </p:column>
+            <p:column headerText="Perfil" style="width:12%;" styleClass="ui-fila-tabla">
+               
+            </p:column>
+            <p:column headerText="Estado" style="width:8%;" styleClass="ui-fila-tabla">
+               
+            </p:column>
+            <p:column headerText="Acciones" style="width:10%;" styleClass="ui-fila-tabla" >
+                <p:commandButton icon="ui-icon-pencil" title="Editar usuario" styleClass="ui-boton-tabla">                           
+                  
+                </p:commandButton>
+                
+                <p:commandButton icon="ui-icon-key" ajax="true" 
+                                 title="Reestablecer contraseña" styleClass="ui-boton-tabla">
+                    
+                </p:commandButton>
+                
+                <p:commandButton icon="ui-icon-trash" title="Eliminar usuario" styleClass="ui-boton-tabla"> 
+                                 
+                   
+                </p:commandButton>
+                
+                <p:commandButton icon="ui-icon-locked" title="Deshabilitar usuario" styleClass="ui-boton-tabla">
+                    
+                </p:commandButton>
+                
+                <p:commandButton icon="ui-icon-unlocked" title="Habilitar usuario" styleClass="ui-boton-tabla"> 
+                                 
+                   
+                </p:commandButton>
+                
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</ui:composition>

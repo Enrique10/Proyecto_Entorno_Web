@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="template/TplUI.xhtml">
+   <ui:define name="contenido">
+       <ui:include src="modulos/paciente/gestionar_paciente/uc_gestionar_paciente_bandeja.xhtml" />
+   </ui:define>     
+    <ui:define name="popups">
+       <ui:include src="modulos/paciente/gestionar_paciente/ucc_editar_paciente.xhtml" />       
+       <ui:include src="modulos/paciente/gestionar_paciente/ucc_agregar_paciente.xhtml" />       
+   </ui:define>
+</ui:composition>
+

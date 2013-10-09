@@ -1,0 +1,68 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:form id="frmAgregarCita">         
+
+        <p:dialog id="dlgAgregarCita" header="Nuevo Cita"
+                  widgetVar="dlgAgregarCita" modal="true">
+            <table width="100%">
+                <tr>
+                    <td colspan="2">
+                        <h:outputText value="Datos Personales" styleClass="ui-tittle-text"/>
+                        <p:separator/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p:inputText size="10" value="#{pacienteMB.dniPaci}"/></td>
+                    <td><p:inputText size="28" value="#{pacienteMB.nombPaci}"/></td>
+                </tr>
+                <tr>                   
+                    <td class="ui-label-formulario"><h:outputText value="Dni"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Nombres"/></td>
+                </tr> 
+                <tr>
+                    <td><p:inputText size="28" value="#{pacienteMB.apepatPaci}"/></td>
+                    <td><p:inputText size="28" value="#{pacienteMB.apematPaci}"/></td>
+                </tr>
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Apellido Paterno"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Apellido Materno"/></td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td colspan="2">
+                        <h:outputText value="Informacio de Cita" styleClass="ui-tittle-text"/>
+                        <p:separator/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p:inputText/>
+                    </td>         
+                    <td>
+                        <p:inputText/>
+                    </td>
+                </tr>                                  
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Fecha Cita"/></td>   
+                    <td class="ui-label-formulario"><h:outputText value="Hora Cita"/></td>   
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p:inputText size="60"/>
+                    </td>                             
+                </tr>  
+                <tr>                    
+                    <td colspan="2" class="ui-label-formulario"><h:outputText value="Especialidad"/></td> 
+                </tr>  
+            </table>            
+        </p:dialog>     
+
+    </h:form>      
+</ui:composition>
+

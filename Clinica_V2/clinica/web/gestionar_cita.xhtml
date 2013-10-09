@@ -1,0 +1,13 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="template/TplUI.xhtml">
+   <ui:define name="contenido">
+       <ui:include src="modulos/cita/gestionar_cita/uc_gestionar_cita_bandeja.xhtml" />
+   </ui:define>   
+    <ui:define name="popups">
+       <ui:include src="modulos/cita/gestionar_cita/ucc_agregar_cita.xhtml" />                   
+   </ui:define>
+</ui:composition>
+

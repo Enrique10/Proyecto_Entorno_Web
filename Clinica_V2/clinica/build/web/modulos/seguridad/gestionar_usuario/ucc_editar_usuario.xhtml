@@ -1,0 +1,94 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+    <h:form id="frmEditarUsuario">
+        <p:dialog widgetVar="dlgEditarUsuario" modal="true" header="#{gestionarUsuario.tituloVentana}" 
+                  id="dlgEditarUsuario" showEffect="slide" hideEffect="fold">
+            <h:outputText value="Información de usuario" 
+                          styleClass="ui-subtitulo-formulario"/>
+            <p:separator />
+            <table style="width: 370px;margin-left: 20px;">
+                <tr>
+                    <td style="width: 90px;">
+                        <h:outputText value="Personal" />
+                    </td>
+                    <td style="width: 10px;">
+                        <h:outputText value=":" />
+                    </td>
+                    <td style="width: 250px;">
+                        <h:outputText value="#{gestionarUsuario.personalSelected.nombPsn} #{gestionarUsuario.personalSelected.apldPsn}" 
+                          styleClass="ui-subtitulo-formulario"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90px;">
+                        <h:outputText value="Nickname" />
+                    </td>
+                    <td style="width: 10px;">
+                        <h:outputText value=":" />
+                    </td>
+                    <td style="width: 250px;">
+                        <h:outputText value="#{gestionarUsuario.personalSelected.usrEps}" 
+                          styleClass="ui-subtitulo-formulario"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90px;">
+                        <h:outputText value="Perfil" />
+                    </td>
+                    <td style="width: 10px;">
+                        <h:outputText value=":" />
+                    </td>
+                    <td style="width: 250px;">
+                        <h:outputText value="#{gestionarUsuario.personalSelected.idPf.nombPf}" 
+                          styleClass="ui-subtitulo-formulario"/>
+                    </td>
+                </tr>
+            </table>
+            <p:separator />
+            <p:messages id="msgEditarUsuario" closable="true" />
+            <h:outputText value="Información a editar" 
+                          styleClass="ui-subtitulo-formulario"/>
+            <p:separator />
+            <table style="width: 370px;margin-left: 20px;">
+                <tr>
+                    <td style="width: 90px;">
+                        <h:outputText value="Nickname" />
+                    </td>
+                    <td style="width: 10px;">
+                        <h:outputText value=":" />
+                    </td>
+                    <td style="width: 250px;">
+                        <p:inputText value="#{gestionarUsuario.nicknameEdit}" styleClass="ui-texto-formulario-tm" required="true" requiredMessage="Usuario es requerido"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90px;">
+                        <h:outputText value="Perfil" />
+                    </td>
+                    <td style="width: 10px;">
+                        <h:outputText value=":" />
+                    </td>
+                    <td style="width: 250px;">
+                        <p:selectOneMenu id="lstPerfilEd" style="width: 250px;" value="#{gestionarUsuario.idPerfilEdit}"
+                                         required="true" requiredMessage="Perfil es necesario"> 
+                            <f:selectItem itemLabel="--seleccione--" noSelectionOption="true" />
+                            <f:selectItems value="#{gestionarUsuario.siPerfilListEdit}" />
+                        </p:selectOneMenu>
+                    </td>
+                </tr>
+            </table>
+            <p:separator />
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="text-align: right;padding-right: 6px;">
+                        <p:commandButton value="Editar usuario" action="#{gestionarUsuario.editarUsuario}" icon="ui-icon-pencil" update="msgEditarUsuario"/>
+                    </td>
+                </tr>
+            </table>
+        </p:dialog>
+    </h:form>
+</ui:composition>

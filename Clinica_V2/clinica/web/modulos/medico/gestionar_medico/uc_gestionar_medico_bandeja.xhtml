@@ -1,0 +1,91 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"      
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:form id="frmConsultaMedico">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:15px; font-family:verdana">
+            <tr>
+                <td style="text-align: left;vertical-align: bottom;padding-bottom: 4px;">
+                    <h:outputText value=".:: Registro Personal Medico" styleClass="ui-tittle-text"/></td>
+                <td style="text-align: right;padding-right: 6px;">
+                    <p:commandButton icon="ui-icon-document"
+                                     value="Nuevo"  
+                                     action="#{medicoMB.preRegistrarMedico}" />                             
+                </td>
+            </tr>
+        </table>
+        <p:separator/> 
+        <p:dataTable id="tblConsultaMedico" selectionMode="single" 
+                     selection="#{medicoMB.medicoSelected}" emptyMessage="No se Encontraron Registros"
+                     value="#{medicoMB.medicoDM}" var="fila">
+
+            <f:facet name="header">
+                <table width="100%" cellspacing="0" cellpadding="0" style="width: 900px">
+                    <tr>
+                        <td style="width: 100px;">
+                            <h:outputText value="Dni" />
+                        </td>
+                        <td style="width:120px">
+                            <p:inputText style="width: 100px" value="#{medicoMB.pdniMedi}"/>
+                        </td>
+                        <td style="width: 100px;">
+                            <h:outputText value="Nombre" />
+                        </td>
+                        <td style="width:280px">
+                            <p:inputText style="width: 260px" value="#{medicoMB.pnombMedi}"/>
+                        </td>
+                        <td style="width: 150px;">
+                            <h:outputText value="Especialidad" />
+                        </td>
+                        <td style="width: 250px;">
+                            <p:selectOneMenu style="width: 230px">
+                                <f:selectItem itemLabel="[Seleccione]" itemValue="0"/>
+                                <f:selectItem itemLabel="Pediatria" itemValue="1"/>
+                                <f:selectItem itemLabel="Medicina General" itemValue="2"/>
+                            </p:selectOneMenu>
+                        </td>
+                        <td style="width: 100px">
+                            <p:commandButton value="Consulta"  
+                                             icon="ui-icon-search" 
+                                             action="#{medicoMB.busquedaMedico}"/>
+                        </td>
+                    </tr>
+                </table>
+
+            </f:facet>
+
+            <p:column headerText="DNI">
+                <h:outputText value="#{fila.persona.dni_psn}"/>
+            </p:column>
+
+            <p:column headerText="NOMBRE">
+                <h:outputText value="#{fila.persona.nomb_psn}"/>
+            </p:column>
+
+            <p:column headerText="ESPECIALIDAD">
+                <h:outputText value="#{fila.especialidad.nomb_espe}"/>
+            </p:column>
+
+            <p:column headerText="ACCION">
+
+                <p:commandButton icon="ui-icon-pencil" 
+                                 title="Editar Doctor" 
+                                 styleClass="ui-boton-tabla"
+                                 />
+
+                <p:commandButton icon="ui-icon-trash" 
+                                 title="Eliminar Doctor" 
+                                 styleClass="ui-boton-tabla"/>
+
+
+            </p:column>
+
+        </p:dataTable>
+
+    </h:form>
+
+
+</ui:composition>

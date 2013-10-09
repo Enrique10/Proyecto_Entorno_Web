@@ -1,0 +1,134 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:form id="frmAgregarMedico">         
+
+        <p:dialog id="dlgAgregarMedico" header="Nuevo Medico"
+                  widgetVar="dlgAgregarMedico" modal="true">
+            <table width="100%">
+                <tr>
+                    <td colspan="2">
+                        <h:outputText value="Datos Personales" styleClass="ui-tittle-text"/>
+                        <p:separator/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p:inputText size="10"/></td>
+                    <td><p:inputText size="28" /></td>
+                </tr>
+                <tr>                   
+                    <td class="ui-label-formulario"><h:outputText value="Dni"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Nombres"/></td>
+                </tr> 
+                <tr>
+                    <td><p:inputText size="28" /></td>
+                    <td><p:inputText size="28" /></td>
+                </tr>
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Apellido Paterno"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Apellido Materno"/></td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <p:selectOneMenu style="width: 124px">
+                            <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                            <f:selectItem itemLabel="Femenino" itemValue="F"/>
+                        </p:selectOneMenu> 
+                    </td>
+                    <td><p:calendar pattern="dd/MM/yyyy" /></td>
+                    <td><p:inputText size="25" /></td>
+                </tr>                                  
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Sexo"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Fec. Nacimiento"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Lugar Nacimiento"/></td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>                    
+                    <td class="ui-label-formulario">
+                        <p:selectOneMenu id="cboDepartamento" 
+                                         style=" width: 185px">
+                            <f:selectItem itemLabel="[Seleccion]" itemValue="0" noSelectionOption="false"/> 
+                            <p:ajax update="cboProvincia"/>
+                        </p:selectOneMenu>
+                    </td>
+                    <td class="ui-label-formulario">
+                        <p:selectOneMenu id="cboProvincia" style=" width: 220px" >
+                            <f:selectItem itemLabel="[Seleccion]" itemValue="0"/>
+                            <p:ajax update="cboDistrito"/>
+                        </p:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>                       
+                    <td class="ui-label-formulario"><h:outputText value="Departamento"/></td>                
+                    <td class="ui-label-formulario"><h:outputText value="Provincia"/></td>  
+                </tr>                  
+                <tr>                    
+                    <td colspan="2" class="ui-label-formulario">
+                        <p:selectOneMenu id="cboDistrito" style="width: 415px">
+                            <f:selectItem itemLabel="[Seleccion]" itemValue="0"/>     
+                        </p:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>                       
+                    <td class="ui-label-formulario"><h:outputText value="Distrito"/></td>     
+                </tr>
+                <tr>
+                    <td colspan="2"><p:inputText size="64" /></td>
+                </tr>
+                <tr>                
+                    <td class="ui-label-formulario" colspan="2"><h:outputText value="Direccion"/></td>           
+                </tr>
+                <tr>
+                    <td><p:inputText size="15" /></td>
+                    <td><p:inputText size="15" /></td>
+                </tr>
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Telefono casa"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Celular"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">                           
+                        <p:separator/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right">   
+                        <p:commandButton  icon="ui-icon-disk"
+                                          value="Guardar"
+                                          
+                                          />  
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h:outputText value="Datos Medico" styleClass="ui-tittle-text"/>
+                        <p:separator/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ui-label-formulario">
+                        <p:selectOneMenu id="cboEspecialidad" style="width: 200px">
+                            <f:selectItem itemLabel="[Seleccion]" itemValue="0"/>     
+                        </p:selectOneMenu>
+                    </td>
+                    <td><p:calendar pattern="dd/MM/yyyy"/></td>
+                </tr>
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Especialidad"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Horario"/></td>
+                </tr>
+            </table>
+        </p:dialog>     
+
+    </h:form>      
+</ui:composition >
+
+

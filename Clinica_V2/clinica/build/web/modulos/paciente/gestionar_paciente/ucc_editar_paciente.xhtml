@@ -1,0 +1,124 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:form id="frmEditarPaciente">         
+
+        <p:dialog id="dlgEditarPaciente" header="Mantenimiento Paciente"
+                  widgetVar="dlgEditarPaciente" modal="true">
+            <table width="100%">
+                <tr>
+                    <td colspan="2">
+                        <h:outputText value="Datos Personales" styleClass="ui-tittle-text"/>
+                        <p:separator/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p:inputText size="10" value="#{pacienteMB.dniPaci}"/></td>
+                    <td><p:inputText size="28" value="#{pacienteMB.nombPaci}"/></td>
+                </tr>
+                <tr>                   
+                    <td class="ui-label-formulario"><h:outputText value="Dni"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Nombres"/></td>
+                </tr> 
+                <tr>
+                    <td><p:inputText size="28" value="#{pacienteMB.apepatPaci}"/></td>
+                    <td><p:inputText size="28" value="#{pacienteMB.apematPaci}"/></td>
+                </tr>
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Apellido Paterno"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Apellido Materno"/></td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <p:selectOneMenu style="width: 124px" value="#{pacienteMB.sexoPaci}">
+                            <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                            <f:selectItem itemLabel="Femenino" itemValue="F"/>
+                        </p:selectOneMenu> 
+                    </td>
+                    <td><p:calendar pattern="dd/MM/yyyy" value="#{pacienteMB.fecnacPaci}"/></td>
+                    <td><p:inputText size="25" value="#{pacienteMB.lugnacPaci}"/></td>
+                </tr>                                  
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Sexo"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Fec. Nacimiento"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Lugar Nacimiento"/></td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td colspan="2">
+                        <h:outputText value="Datos Generales" styleClass="ui-tittle-text"/>
+                        <p:separator/>
+                    </td>
+                </tr>
+                <tr>                    
+                    <td class="ui-label-formulario">
+                        <p:selectOneMenu id="cboDepartamento" value="#{pacienteMB.depaPaci}" style=" width: 185px">
+                            <f:selectItem itemLabel="[Seleccion]" itemValue="0"/> 
+                            <f:selectItems value="#{pacienteMB.comboDepartamento}"/>
+                            <p:ajax update="cboProvincia, cboDistrito"/>                            
+                        </p:selectOneMenu>
+                    </td>
+                    <td class="ui-label-formulario">
+                        <p:selectOneMenu id="cboProvincia" style=" width: 220px" value="#{pacienteMB.provPaci}">
+                            <f:selectItem itemLabel="[Seleccion]" itemValue="0"/>
+                            <f:selectItems value="#{pacienteMB.comboProvincia}"/>
+                            <p:ajax update="cboDistrito"/>
+                        </p:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>                       
+                    <td class="ui-label-formulario"><h:outputText value="Departamento"/></td>                
+                    <td class="ui-label-formulario"><h:outputText value="Provincia"/></td>  
+                </tr>                  
+                <tr>                    
+                    <td colspan="2" class="ui-label-formulario">
+                        <p:selectOneMenu id="cboDistrito" style="width: 415px" value="#{pacienteMB.distPaci}">
+                            <f:selectItem itemLabel="[Seleccion]" itemValue="0"/>     
+                            <f:selectItems value="#{pacienteMB.comboDistrito}"/>
+                        </p:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>                       
+                    <td class="ui-label-formulario"><h:outputText value="Distrito"/></td>     
+                </tr>
+                <tr>
+                    <td colspan="2"><p:inputText size="64" value="#{pacienteMB.direPaci}"/></td>
+                </tr>
+                <tr>                
+                    <td class="ui-label-formulario" colspan="2"><h:outputText value="Direccion"/></td>           
+                </tr>
+                <tr>
+                    <td><p:inputText size="15" value="#{pacienteMB.telefPaci}"/></td>
+                    <td><p:inputText size="15" value="#{pacienteMB.movilPaci}"/></td>
+                </tr>
+                <tr>
+                    <td class="ui-label-formulario"><h:outputText value="Telefono casa"/></td>
+                    <td class="ui-label-formulario"><h:outputText value="Celular"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">                           
+                        <p:separator/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right">   
+                        <p:commandButton  icon="ui-icon-disk"
+                                          value="Actualizar"
+                                          action="#{pacienteMB.editarPaciente}"
+                                          />  
+                    </td>
+                </tr>
+            </table>
+        </p:dialog>     
+
+    </h:form>      
+</ui:composition >
+
+

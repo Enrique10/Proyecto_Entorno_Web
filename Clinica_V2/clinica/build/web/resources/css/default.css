@@ -1,0 +1,254 @@
+body{
+    background-color: #FFFFFF;
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color: #000000;  
+    padding: 0px;
+    margin: 0px;
+}
+
+.body_sistema {
+    background-color: #ffffff;
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color: #000000;  
+    margin: 10px;
+}
+
+h1 {
+    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    border-bottom: 1px solid #AFAFAF; 
+    font-size:  16px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: #D20005;
+}
+
+a:link, a:visited {
+  color: #045491;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+  color: #045491;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+
+
+/*ESTILOS FORMULARIO LOGIN*/
+.body_login{
+    margin: 0px;
+    padding: 0px;
+/*    background-image: url('../../imagenes/bg_login.gif');*/
+    background-image: url('../../imagenes/fondo2.gif');
+}
+
+.banda_formulario{
+    margin-top: 240px;
+/*    background-image: url('../../imagenes/banda_login.jpg');*/
+    height: 181px;
+/*    background-repeat: repeat-x;*/
+}
+
+.formulario_login{
+/*    background-image: url('../../imagenes/frm_login.png');    */
+    width: 405px;
+    height: 187px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.ui-messages-error-summary{
+    font-size: 12px;
+}
+
+.ui-messages-error{
+    margin: 2px;
+    padding: 2px;
+    text-align: left;
+}
+
+.ui-messages-info{
+    margin: 2px;
+    padding: 2px;
+    text-align: left;
+}
+
+.ui-messages-info-summary{
+    font-size: 12px;
+}
+
+.ui-messages-warn{
+    margin: 2px;
+    padding: 2px;
+    text-align: left;
+}
+
+.ui-messages-warn-summary{
+    font-size: 12px;
+}
+
+.ui-campo_formulario{
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-size: 11px;
+}
+
+.ui-banda-texto{
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.ui-button-text{
+    font-size: 12px;
+}
+
+.ui-menu{
+    margin: 0px;
+}
+
+.ui-menubar{
+    margin: 0px;
+    padding: 0px;
+    border: none 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+
+.ui-toolbar{
+    border: none 0px;
+    padding: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+
+.ui-tittle-text{
+    padding-left: 10px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ui-formulario-basico{
+    padding-left: 14px;
+}
+
+
+.ui-boton-tabla{
+    padding:0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 4px;
+    margin-top: 0px;
+    width: 22px;
+    height: 22px;
+}
+
+.ui-fila-tabla{
+    padding: 0px;
+    margin: 0px;
+}
+
+.ui-subtitulo-formulario{
+    font-weight: bold;
+}
+
+.ui-texto-formulario-tm{
+    font-size: 10px;
+    width: 150px;
+}
+
+.ui-combo-large{
+    width: 200px;
+}
+
+.ui-label-formulario{
+    text-align: left;
+    padding-top: 0px;
+    padding-bottom: 8px;
+    padding-left: 4px;
+    font-size: 10px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    vertical-align: top;
+}
+
+.ui-cuerpo-formulario{
+    padding: 0px;
+    margin: 0px;
+}
+
+.hasDatepicker{
+    width: 78px;
+}
+
+.ui-button-text-only{
+    height: 24px;
+}
+
+.ui-button-text-icon-left{
+    height: 24px;
+}
+
+.ui-dt-c{
+    font-size: 11px;
+}
+
+.ui-inputtext{
+    font-size: 11px;
+}
+
+.ui-inputfield{
+    padding: 3px;
+    margin: 0px;
+}
+
+.ui-fieldset{
+    padding: 4px;
+    font-size: 11px;
+}
+
+.ui-tittle-label-formulario{
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom: 4px;
+}
+
+.ui-label-formulario-campo{
+    font-weight: bold;
+    font-size: 11px;
+    padding-bottom: 4px;
+    padding-right: 4px;
+    color: #111111;
+}
+
+.ui-texto-formulario-campo{
+    font-size: 11px;
+    padding-bottom: 4px;
+    padding-right: 4px;
+    color: #222222;
+    text-transform: uppercase;
+}
+
+.ui_icon_check{
+    background-image: url('../../imagenes/ui_icon_check.png') !important;
+    background-position: 0px 3px;
+}
+
+.ui_icon_plus{
+    background-image: url('../../imagenes/ui_icon_plus.png') !important;
+    background-position: 0px 3px;
+}
+
+.ui_icon_engine{
+    background-image: url('../../imagenes/ui_icon_setting.png') !important;
+    background-position: 0px 3px;
+}
+
+.ui_icon_security{
+    background-image: url('../../imagenes/ui_icon_security.png') !important;
+    background-position: 0px 3px;
+}

@@ -1,0 +1,40 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+    <h:form id="frmCambiarClave">
+        <h:outputText value=":: Cambiar contraseña" styleClass="ui-tittle-text"/>
+        <p:separator />
+
+        <h:panelGrid columns="1" styleClass="ui-formulario-basico">
+            <p:messages id="msgUsuario" closable="true"/>
+
+            <h:outputLabel value="Contraseña Anterior:" for="txtClaveAnterior" />
+            <p:password id="txtClaveAnterior" style="width: 300px;" value="#{cambiarClave.oldClave}"
+                        required="true" requiredMessage="La contraseña actual es necesaria" tabindex="1" />
+            <p:tooltip for="txtClaveAnterior" showEffect="slide" hideEffect="slide" value="Ingrese su contraseña actual"/>
+
+            <h:outputLabel value="Nueva Contraseña:" for="txtNuevaClave" />
+            <p:password id="txtNuevaClave" style="width: 300px;" inline="true" value="#{cambiarClave.newClave}"
+                        feedback="true" goodLabel="Normal" promptLabel="Muy débil" strongLabel="Fuerte" weakLabel="Débil"
+                        required="true" requiredMessage="La contraseña nueva es necesaria" tabindex="2"/>
+            <p:tooltip for="txtNuevaClave" showEffect="slide" hideEffect="slide" value="Ingrese su nueva contraseña"/>
+
+            <h:outputLabel value="Repetir Contraseña:" for="txtReNuevaClave" />
+            <p:password id="txtReNuevaClave" style="width: 300px;" value="#{cambiarClave.repeatClave}"
+                        required="true" requiredMessage="Confirme su contraseña" tabindex="3"/>
+            <p:tooltip for="txtReNuevaClave" showEffect="slide" hideEffect="slide" value="Confirme su contraseña"/>
+
+            <p:separator id="spCambiarClave" />
+            <p:commandButton icon="ui-icon-disk" value="Cambiar contraseña" 
+                             style="font-size: 11px;" update="msgUsuario,txtClaveAnterior, txtNuevaClave, txtReNuevaClave" 
+                             onclick="wvProcesandoPagina.show()"
+                             oncomplete="wvProcesandoPagina.hide()"
+                             tabindex="4"
+                             action="#{cambiarClave.changeClave}"/>
+
+        </h:panelGrid>
+    </h:form>
+</ui:composition>

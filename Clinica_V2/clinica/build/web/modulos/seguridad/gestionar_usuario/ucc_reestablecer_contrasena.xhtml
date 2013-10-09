@@ -1,0 +1,33 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+    <h:form id="frmReestablecerContrasena">
+        <p:dialog widgetVar="dlgReestablecerContrasena" modal="true" header="#{gestionarUsuario.tituloVentana}" 
+                  id="dlgReestablecerContrasena" showEffect="slide" hideEffect="fold">
+            <h:outputText value="#{gestionarUsuario.personalSelected.nombPsn} #{gestionarUsuario.personalSelected.apldPsn}" styleClass="ui-subtitulo-formulario"/><br />
+            <p:separator />
+            <p:messages id="msgReestablecerContrasena" closable="true" />
+            <table style="width: 370px;margin-left: 20px;">
+                <tr>
+                    <td>
+                        <h:outputText value="Contraseña" />
+                    </td>
+                    <td>
+                        <p:password value="#{gestionarUsuario.clave}" styleClass="ui-texto-formulario-tm" required="true" requiredMessage="Contraseña es requerida"/>
+                    </td>
+                </tr>
+            </table>
+            <p:separator />
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="text-align: right;padding-right: 6px;">
+                        <p:commandButton value="Reestablecer contraseña" action="#{gestionarUsuario.reestablecerContrasena}" icon="ui-icon-disk" update="msgReestablecerContrasena"/>
+                    </td>
+                </tr>
+            </table>
+        </p:dialog>
+    </h:form>
+</ui:composition>

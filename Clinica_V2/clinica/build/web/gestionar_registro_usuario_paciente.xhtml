@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Registro Usuario</title>
+        <link href="resources/css/default.css" type="text/css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <center>
+            <h:form style=" width: 500px; height: 400px">
+                <!--            <center>
+                                <table>
+                                    <tr>
+                                        <td><h:outputText value="Dni"/></td>
+                                        <td><p:inputText/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="Clave"/></td>
+                                        <td><p:inputText/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="Repita Clave"/></td>
+                                        <td><p:inputText/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="Correo Electronico"/></td>
+                                        <td><p:inputText/></td>
+                                    </tr>
+                                </table>
+                            </center>-->
+
+
+<!--                <p:panel>
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Dni"/>
+                        <p:inputText size="10"/>
+
+
+                        <h:outputText value="Clave"/>
+                        <p:password size="20"/>
+
+
+                        <h:outputText value="Repita Clave"/>
+                        <p:password size="20"/>
+
+
+                        <h:outputText value="Correo Electronico"/>
+                        <p:inputText size="40"/>
+
+                        <f:facet name="footer">
+                            <center>
+                                <p:commandButton value="Grabar"/>
+                                <p:commandButton value="Cancelar"/>
+                            </center>
+                        </f:facet>
+
+                    </h:panelGrid>
+                </p:panel>-->
+
+                <p:dialog id="dlgRegistroUsuario" widgetVar="dlgRegistroUsuario" header="Registro de Usuario" 
+                          modal="true" showEffect="slide" hideEffect="fold" >
+                    <p:panel>
+                        <h:panelGrid columns="2">
+
+                            <h:outputText value="Dni"/>
+                            <p:inputText size="10"/>
+
+
+                            <h:outputText value="Clave"/>
+                            <p:password size="20"/>
+
+
+                            <h:outputText value="Repita Clave"/>
+                            <p:password size="20"/>
+
+
+                            <h:outputText value="Correo Electronico"/>
+                            <p:inputText size="40"/>
+
+                            <f:facet name="footer">
+                                <center>
+                                    <p:commandButton value="Grabar"/>
+                                    <p:commandButton value="Cancelar"/>
+                                </center>
+                            </f:facet>
+
+                        </h:panelGrid>
+                    </p:panel>
+                </p:dialog>
+
+            </h:form>
+        </center>
+    </h:body>
+</html>
+

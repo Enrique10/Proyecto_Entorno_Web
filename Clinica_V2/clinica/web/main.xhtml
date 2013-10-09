@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="../resources/css/default.css" type="text/css" rel="stylesheet" />
+    </h:head>
+    <h:body>
+       <h:form id="frmMenu">
+            <table width="100%" cellpadding="0" cellspacing="0" style="background-image: url('../imagenes/bk_banda.gif');height: 60px;" >
+                <tr>
+                    <td>
+                        <img src="../imagenes/logo-clinica.gif" />
+                    </td>
+                    <td style="padding: 6px;" valign="bottom">
+                        <table align="right" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td valign="middle">
+                                    <h:outputText styleClass="ui-banda-texto"/><br />
+                                </td>
+                                <td>
+                                    &nbsp;<h:outputText styleClass="ui-banda-texto" value="::" style="font-weight: bold"/> &nbsp;
+                                </td>
+                                <td>
+                                    <h:outputText styleClass="ui-banda-texto" />
+                                </td>
+                                <td>
+                                    &nbsp;<h:outputText styleClass="ui-banda-texto" value="::" style="font-weight: bold"/> &nbsp;
+                                </td>
+                                <td>
+                                    <h:outputText styleClass="ui-banda-texto" id="txtFecha"/>
+                                    <p:poll interval="1" update="txtFecha" />
+                                </td>
+                            </tr>
+                        </table>                         
+                    </td>
+                </tr>
+            </table>            
+            <p:menubar model="#{principalMb.menuModel}" id="mnuSistema" autoDisplay="false"/>
+        </h:form>
+    </h:body>
+</html>
+

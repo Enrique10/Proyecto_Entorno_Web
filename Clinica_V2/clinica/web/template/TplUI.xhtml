@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title><h:outputText value="#{principalMb.nombreSistema}"/> </title>
+        <link href="../resources/css/default.css" type="text/css" rel="stylesheet" />
+    </h:head>
+    <h:body>        
+        <p:outputPanel layout="block" style="background-color: #FFFFFF; width:100%;height:542px;padding: 0px; margin: 0px;">
+            <p:spacer width="100%" height="10" />
+            <ui:insert name="contenido" />
+            <ui:insert name="popups" />
+<!--            <p:dialog header="Procesando..." id="dlgProcesandoP" 
+                      widgetVar="wvProcesandoPagina" modal="true" styleClass="ui-campo_formulario" 
+                      closable="no">
+                <h:outputText value="Procesando petición" styleClass="ui-campo_formulario" /><br/>
+                <img src="imagenes/loading.gif" border="0" />
+            </p:dialog>-->
+        </p:outputPanel>
+    </h:body>
+</html>
+

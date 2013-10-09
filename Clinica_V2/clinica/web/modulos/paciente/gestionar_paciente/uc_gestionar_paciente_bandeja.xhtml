@@ -1,0 +1,95 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"      
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:form id="frmGestionarPaciente">            
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:15px; font-family:verdana">
+            <tr>
+                <td style="text-align: left;vertical-align: bottom;padding-bottom: 4px;">
+                    <h:outputText value=".:: Registro Paciente" styleClass="ui-tittle-text"/></td>
+                <td style="text-align: right;padding-right: 6px;">
+                    <p:commandButton icon="ui-icon-document"
+                                     value="Nuevo"  
+                                     action="#{pacienteMB.preRegistrarPaciente}" />                             
+                </td>
+            </tr>
+        </table>
+        <p:separator/>        
+        <p:messages id="msgBandejaPaciente" closable="true"/>
+        <p:dataTable id="tblPaciente" rows="10"                     
+                     selectionMode="single" selection="#{pacienteMB.pacienteSelected}"
+                     value="#{pacienteMB.pacienteDM}" var="fila"  
+                     emptyMessage="Sin pacientes a mostrar">   
+
+            <f:facet name="header">
+                <table width="100%" cellspacing="0" cellpadding="0" style="width: 700px">
+                    <tr>
+                        <td style="width: 100px;">
+                            <h:outputText value="Dni" />
+                        </td>
+                        <td style="width:120px">
+                            <p:inputText style="width: 100px" value="#{pacienteMB.dniPaci}"/>
+                        </td>
+                        <td style="width: 120px;">
+                            <h:outputText value="Nombre" />
+                        </td>                            
+                        <td style="width: 270px">
+                            <p:inputText style="width: 240px" value="#{pacienteMB.nombPaci}" />
+                        </td>
+                        <td style="width: 100px">
+                            <p:commandButton value="Consulta"    
+                                             icon="ui-icon-search"
+                                             action="#{pacienteMB.busquedaPaciente}"
+                                             update="tblPaciente"/>
+                        </td>
+                    </tr>
+                </table>
+
+            </f:facet>
+
+            <p:column headerText="Dni">
+                <h:outputText value="#{fila.persona.dni_psn}"/>
+            </p:column>
+
+            <p:column headerText="Nombre">
+                <h:outputText value="#{fila.persona.nomb_psn}"/>
+            </p:column>
+
+            <p:column headerText="Fecha Ingreso">
+                <h:outputText value="#{fila.fecing_paci}"/>
+            </p:column>
+
+            <p:column headerText="Distrito">
+                <h:outputText value="#{fila.persona.dist_psn}"/>
+            </p:column>
+
+            <p:column headerText="Direccion">
+                <h:outputText value="#{fila.persona.dire_psn}"/>
+            </p:column>
+
+            <p:column headerText="Sexo">
+
+            </p:column>                   
+
+            <p:column headerText="Accion">
+                <p:commandButton title="Editar Registro Falla"                                   
+                                 icon="ui-icon-pencil"
+                                 styleClass="ui-boton-tabla"
+                                 action="#{pacienteMB.preEditarPaciente}">          
+                    <f:setPropertyActionListener value="#{fila}" target="#{pacienteMB.pacienteSelected}" />
+                </p:commandButton>  
+
+                <p:commandButton title="Eliminar Registro Falla"                                   
+                                 icon="ui-icon-trash"
+                                 styleClass="ui-boton-tabla">          
+                    <!--                        <f:setPropertyActionListener value="#falla" target="#gestionFallaMB.gestionFallaSelected" />-->
+                </p:commandButton>                              
+            </p:column>
+        </p:dataTable>    
+
+    </h:form>      
+</ui:composition>
+

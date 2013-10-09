@@ -1,0 +1,17 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+    <h:form id="frmHabDesaUsuario">
+        <p:confirmDialog widgetVar="dlgHabDesaUsuario"  message="#{gestionarUsuario.tituloVentana}" 
+                         header="Confirmación" id="dlgHabDesaUsuario" severity="alert">
+            <p:commandButton id="btnDeshabilitar" value="#{gestionarUsuario.nombreBoton}" 
+                             update=":frmGestionarUsuario:msgBandejaUsuario, :frmGestionarUsuario:tblUsuario" 
+                             oncomplete="dlgHabDesaUsuario.hide()"  
+                    actionListener="#{gestionarUsuario.deshabilitarUsuario}" />
+            <p:commandButton id="btnCancelar" value="Cancelar" onclick="dlgHabDesaUsuario.hide()" type="button" />
+        </p:confirmDialog>
+    </h:form>
+</ui:composition>

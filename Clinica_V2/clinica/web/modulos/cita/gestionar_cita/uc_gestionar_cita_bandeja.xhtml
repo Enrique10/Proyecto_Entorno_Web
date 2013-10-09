@@ -1,0 +1,129 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"      
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:form>
+        <table width="100%">
+            <tr>
+                <td>
+                    <h:outputText value=".:: Registro de Citas" styleClass="ui-tittle-text"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p:separator/>
+                </td>
+            </tr>
+        </table>       
+
+        <p:dataTable id="tblConsultaDoctor" selectionMode="single" selection="#{citaMB.citaSelected}"
+                     value="#{citaMB.citaDM}" var="fila">
+
+            <f:facet name="header">
+                <table width="100%" cellspacing="0" cellpadding="0" style="width: 900px">
+                    <tr>
+                        <td style="width: 100px;">
+                            <h:outputText value="Fecha Del " />
+                        </td>
+                        <td style="width:300px">
+                            <p:calendar 
+                                effect="slide"
+                                pattern="dd/MM/yyyy"/>                                  
+
+                        </td>
+
+                        <td style="width: 100px;">
+                            <h:outputText value="Al " />
+                        </td>
+                        <td style="width:300px">
+                            <p:calendar 
+                                effect="slide"
+                                pattern="dd/MM/yyyy"/> 
+                        </td>
+
+                        <td style="width: 150px;">
+                            <h:outputText value="Especialidad" />
+                        </td>
+                        <td style="width: 350px;">
+                            <p:selectOneMenu style="width: 330px">
+                                <f:selectItem itemLabel="[Seleccione]" itemValue="0"/>
+                                <f:selectItem itemLabel="Pediatria" itemValue="1"/>
+                                <f:selectItem itemLabel="Medicina General" itemValue="2"/>
+                            </p:selectOneMenu>
+                        </td>
+                        <td style="width: 100px">
+                            <p:commandButton value="Consulta" action="#{citaMB.busquedaCita}" update="tblConsultaDoctor"/>
+                        </td>
+                    </tr>
+                </table>
+
+            </f:facet>               
+
+            <p:column headerText="Hora Cita">                
+                <h:outputText  value="#{fila.horario}"/>
+            </p:column>
+
+            <p:column headerText="LUNES #{citaMB.lunes}">    
+                <center>
+                    <p:commandLink  value="#{fila.fec_cta==citaMB.lunes?fila.fec_cta:'vacio'}"
+                                    action="#{citaMB.preRegistrarEditar}">
+                        <f:setPropertyActionListener value="#{fila}" 
+                                                     target="#{citaMB.citaSelected}"
+                                                     />      
+                    </p:commandLink> 
+                </center>
+            </p:column> 
+
+            <p:column headerText="MARTES #{citaMB.martes}">               
+                <center>
+                    <p:commandLink  value="#{fila.fec_cta==citaMB.martes?fila.fec_cta:'vacio'}"
+                                    action="#{citaMB.preRegistrarEditar}">
+                        <f:setPropertyActionListener value="#{fila}" 
+                                                     target="#{citaMB.citaSelected}"
+                                                     />      
+                    </p:commandLink> 
+                </center>
+            </p:column> 
+
+            <p:column headerText="MIERCOLES">
+                <h:outputText value=""/>                
+            </p:column> 
+
+            <p:column headerText="JUEVES">
+                <h:outputText value=""/>               
+            </p:column> 
+
+            <p:column headerText="VIERNES">
+                <h:outputText value=""/>                
+            </p:column> 
+
+            <p:column headerText="SABADO">
+                <h:outputText value=""/>                
+            </p:column>
+
+            <p:column headerText="DOMINGO">
+                <h:outputText value=""/>                
+            </p:column>           
+
+            <p:column headerText="ACCION">
+
+                <p:commandButton icon="ui-icon-pencil" 
+                                 title="Editar Doctor" 
+                                 styleClass="ui-boton-tabla"
+                                 action="#{doctoresMB.preEditarDoctor}"/>
+
+                <p:commandButton icon="ui-icon-trash" 
+                                 title="Eliminar Doctor" 
+                                 styleClass="ui-boton-tabla"/>
+
+
+            </p:column>
+
+        </p:dataTable>
+
+    </h:form>     
+</ui:composition>
+
